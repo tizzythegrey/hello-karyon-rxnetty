@@ -8,8 +8,6 @@ node{
         stage ('Install dependencies') {
            sh "sudo apt-get update -y"
            sh "sudo apt install unzip zip curl wget -y"
-           sh "export SDKMAN_DIR='/usr/local/sdkman' && curl -s 'https://get.sdkman.io' | bash"
-           sh "source /usr/local/sdkman/bin/sdkman-init.sh"
            sh "sudo sdk install gradle"
            sh "sudo apt install java-1.8.0 java-1.8.0-openjdk-devel"
         }
