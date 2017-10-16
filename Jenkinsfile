@@ -1,5 +1,4 @@
-agent {
-    node{
+node{
 
         stage ('Checkout') {
         // checkout repository
@@ -38,5 +37,4 @@ agent {
             app.push("latest")
           }
         }
-    }
-}
+ }
