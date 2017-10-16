@@ -8,7 +8,7 @@ node("docker") {
   stage ('Install dependencies') {
     sh "apt-get update -y"
     sh "sudo apt install unzip zip curl wget -y"
-    sh "sudo curl -s "https://get.sdkman.io" | bash"
+    sh "sudo curl -s 'https://get.sdkman.io' | bash"
     sh "source /home/ubuntu/.sdkman/bin/sdkman-init.sh"
     sh "sudo sdk install gradle"
     sh "sudo apt install java-1.8.0 java-1.8.0-openjdk-devel"
