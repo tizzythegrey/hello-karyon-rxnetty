@@ -6,7 +6,7 @@ node{
         }
 
         stage ('Install dependencies') {
-           sh "apt-get update -y"
+           sh "sudo apt-get update -y"
            sh "sudo apt install unzip zip curl wget -y"
            sh "sudo curl -s 'https://get.sdkman.io' | bash"
            sh "source /home/ubuntu/.sdkman/bin/sdkman-init.sh"
