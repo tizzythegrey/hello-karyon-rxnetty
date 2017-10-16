@@ -8,7 +8,6 @@ node{
         stage ('Install dependencies') {
            sh "sudo apt-get update -y"
            sh "sudo apt install unzip zip curl wget -y"
-           sh "sdk install gradle"
            sh "sudo apt install java-1.8.0 java-1.8.0-openjdk-devel"
         }
 
