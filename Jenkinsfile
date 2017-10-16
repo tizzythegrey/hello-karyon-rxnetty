@@ -12,7 +12,6 @@ node{
 
         stage ('Java Build') {
         // build .jar package
-          sh "./gradlew clean run"
           sh "./gradlew clean fatJar"
         }
         stage ('build docker image'){
