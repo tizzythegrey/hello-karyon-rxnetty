@@ -17,7 +17,8 @@ node{
         stage ('build docker image'){
          /* Build the Docker image with a Dockerfile, tagging it with the build number */
          /* def app = docker.build "demo/hello-karyon-rxnetty:${env.BUILD_NUMBER}" */
-          sh "sudo docker build -t demo/hello-karyon-rxnetty:${env.BUILD_NUMBER} ."      
+          sh "sudo docker build -t demo/hello-karyon-rxnetty:${env.BUILD_NUMBER} ."
+          sh "sudo docker tag http://10.20.70.175:5000/demo/hello-karyon-rxnetty:${env.BUILD_NUMBER}"
         }
         
         /* stage ('Test'){ */
@@ -28,9 +29,7 @@ node{
        /* } */
        
         stage ('Publish'){
-           sh "sudo docker login http://10.20.70.175:5000"
-           sh "sudo docker push demo/hello-karyon-rxnetty:${env.BUILD_NUMBER}"
-
+           sh "sudo docker push http://10.20.70.175:5000/demo/hello-karyon-rxnetty:${env.BUILD_NUMBER}"
         
         }
  } 
