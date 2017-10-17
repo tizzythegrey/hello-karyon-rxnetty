@@ -28,8 +28,8 @@ node{
        /* } */
        
         stage ('Publish'){
-        
-           sh "sudo docker push http://10.20.70.175:5000/demo/hello-karyon-rxnetty:${env.BUILD_NUMBER}"
+           sh "sudo docker login http://10.20.70.175:5000"
+           sh "sudo docker push demo/hello-karyon-rxnetty:${env.BUILD_NUMBER}"
 
         
         }
