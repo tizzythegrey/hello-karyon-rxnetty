@@ -25,15 +25,12 @@ node{
          /*  app.inside { */
          /*  sh "echo 'Tests passed'" */
           /* } */
-       /* } *?
+       /* } */
        
         stage ('Publish'){
-           /* Finally, we'll push the image with two tags:
-           * Second, the 'latest' tag.
-           * Pushing multiple tags is cheap, as all the layers are reused. */
-          /* docker.withRegistry('http://10.20.70.110:5000') {
-            app.push("latest") */
-          sh "sudo docker push http://10.20.70.175:5000/demo/hello-karyon-rxnetty:${env.BUILD_NUMBER}"
-          }
+        
+           sh "sudo docker push http://10.20.70.175:5000/demo/hello-karyon-rxnetty:${env.BUILD_NUMBER}"
+
+        
         }
  } 
